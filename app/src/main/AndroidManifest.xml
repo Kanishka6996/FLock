@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.kanishka.flock">
+
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_CONTACTS" />
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity
+      android:name=".ScanBluetoothActivity"
+      android:label="Add a new Device" />
+    <activity android:name=".AuthSuccessScreen" />
+    <activity android:name=".FingerPrintAuth" />
+    <activity
+      android:name=".AvailableLocksActivity"
+      android:label="My Devices"
+      android:theme="@style/AppTheme.NoActionBar" />
+    <activity
+      android:name=".AddLockActivity"
+      android:label="New lock" />
+    <activity
+      android:name=".LocksActivity"
+      android:label="@string/title_activity_locks" />
+    <activity android:name=".FriendProfileActivity" />
+    <activity android:name=".ContactsActivitty" />
+    <activity android:name=".UserDetailActivity" />
+    <activity android:name=".ProfileActivity" />
+    <activity android:name=".MobileLoginActivity" />
+    <activity android:name=".LoginActivity" />
+    <activity
+      android:name="com.yalantis.ucrop.UCropActivity"
+      android:screenOrientation="portrait"
+      android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    <activity android:name=".MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+  </application>
+
+</manifest>

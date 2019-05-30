@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "738383015507",
+    "firebase_url": "https://f-lock.firebaseio.com",
+    "project_id": "f-lock",
+    "storage_bucket": "f-lock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738383015507:android:7e3cab3b87762fbe",
+        "android_client_info": {
+          "package_name": "com.kanishka.flock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738383015507-opu1s7h9i7ji8plhfgldtcu17a923hc8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kanishka.flock",
+            "certificate_hash": "2f863185cf238b9ec0d737efff9bd6997704b3d8"
+          }
+        },
+        {
+          "client_id": "738383015507-3j3rl58p61f3bi0mmu3ge4f1vaugm4e2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOplH02E_1bf106eTJzIjol_thyq5IQvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738383015507-3j3rl58p61f3bi0mmu3ge4f1vaugm4e2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
