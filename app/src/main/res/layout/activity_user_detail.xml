@@ -4,6 +4,8 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:isScrollContainer="true"
+  app:layout_scrollFlags="scroll"
   tools:context=".UserDetailActivity">
 
   <ImageView
@@ -25,7 +27,6 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="32dp"
     android:layout_marginEnd="8dp"
-    android:text="TextView"
     android:textSize="22sp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +39,6 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
-    android:text="TextView"
     android:textSize="16sp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -46,28 +46,30 @@
 
   <Button
     android:id="@+id/profile_logout"
-    android:layout_width="wrap_content"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="#AB0000"
     android:text="LOGOUT"
+    android:textColor="#EDEDED"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.498"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/profile_locks" />
+    app:layout_constraintStart_toStartOf="parent" />
 
   <Button
     android:id="@+id/profile_edit"
-    android:layout_width="wrap_content"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
-    android:layout_marginTop="32dp"
     android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
     android:text="Edit Profile"
+    app:layout_constraintBottom_toTopOf="@+id/profile_logout"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/profile_id" />
+    app:layout_constraintStart_toStartOf="parent" />
 
   <TextView
     android:id="@+id/profile_mobile"
@@ -76,33 +78,38 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
-    android:text="TextView"
     android:textSize="18sp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/profile_fname" />
 
-  <Button
-    android:id="@+id/profile_friends"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+  <LinearLayout
+    android:layout_width="395dp"
+    android:layout_height="91dp"
     android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="24dp"
     android:layout_marginEnd="8dp"
-    android:text="Your Friends"
+    android:orientation="horizontal"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/profile_edit" />
+    app:layout_constraintTop_toBottomOf="@+id/profile_id">
 
-  <Button
-    android:id="@+id/profile_locks"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="8dp"
-    android:text="My Locks"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/profile_friends" />
+    <Button
+      android:id="@+id/profile_locks"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:text="My Locks"
+      android:textSize="20sp" />
+
+    <Button
+      android:id="@+id/profile_friends"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:text="My Friends"
+      android:textSize="20sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/profile_id" />
+  </LinearLayout>
 </android.support.constraint.ConstraintLayout>
