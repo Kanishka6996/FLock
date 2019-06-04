@@ -3,6 +3,7 @@ package com.kanishka.flock;
 import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -15,7 +16,10 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -27,6 +31,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.kanishka.flock.AppDialog;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -142,6 +148,23 @@ public class AvailableLocksActivity extends AppCompatActivity {
                 Toast.makeText(AvailableLocksActivity.this, "Authenticating " + name, Toast.LENGTH_SHORT).show();
               } else {
                 Toast.makeText(AvailableLocksActivity.this, "You don't have access to this lock", Toast.LENGTH_LONG).show();
+                AlertDialog alertDialog = new AlertDialog.Builder(AvailableLocksActivity.this).create();
+                alertDialog.setTitle("No access!");
+                alertDialog.setMessage("You do not have access to this lock, would you like to request access?");
+                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Request Access",
+                  new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                      dialog.dismiss();
+                      Toast.makeText(AvailableLocksActivity.this, "Requesting access to admin of " + name, Toast.LENGTH_SHORT).show();
+                    }
+                  });
+                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                  new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                      dialog.dismiss();
+                    }
+                  });
+                alertDialog.show();
               }
             }
 
@@ -156,6 +179,7 @@ public class AvailableLocksActivity extends AppCompatActivity {
       }
     });
   }
+
 
   public static class bluetoothList {
     String deviceName, macAddress;
